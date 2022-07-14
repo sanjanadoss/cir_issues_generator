@@ -5,4 +5,122 @@
 a, a:hover, a:focus, a:active {
     text-decoration: none;
     color: inherit;
-} 
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
+}
+
+/* Toggle checkbox */
+.switch-wrap {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+.switch-row {
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    padding: 5px;
+    gap: 15px;
+}
+.switch-row .text {
+    text-transform: uppercase;
+    font-weight: 600;
+    transform: translateY(-5px);
+    letter-spacing: 2px;
+}
+
+.dark {
+    --dull-dark: #564e96;
+    --omg-so-vivid: #4141c8;
+}
+
+.dark .switch-row .text {
+    color: var(--omg-so-vivid);
+    transition: color 0.5s ease-in-out;
+}
+
+.dark .switch-row label::after {
+    background: var(--omg-so-vivid) !important;
+}
+
+/* Background */
+.bg {
+    opacity: 0;
+    z-index: -1;
+    background-color: #141414;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.switch-row input:not(:checked) ~ .bg {
+    opacity: 1;
+}
+
+/* Color wheel */
+.dark {
+    animation: rainbow 42s linear infinite;
+}
+
+@keyframes rainbow {
+    from {
+        filter: hue-rotate(-290deg)
+    }
+    to {
+        filter: hue-rotate(70deg)
+    }
+}
+
+/* Transitions */
+h1 ,
+.card ,
+.input-group-text ,
+.input-group-text ,
+.form-control,
+.form-control[readonly] {
+    transition: all .5s ease-in-out;
+}
+
+
+/* Dark colors for form */
+/* Technically, we would just use bootrap classes, but bootstrap doesn't 
+   really natively support switching dark colors well */
+.dark h1 {
+    color: #fefefe;
+}
+.dark .card {
+    background-color: #191919cc;
+    box-shadow: 0 0 5px rgba(6, 6, 6, 0.1);
+}
+
+.dark .input-group-text {
+    background-color: var(--omg-so-vivid);
+    color: white;
+    border-color: var(--omg-so-vivid);
+}
+
+.dark .form-control,
+.dark .form-control[readonly] {
+    background-color: #191919cc;
+    color: #fefefe;
+    border-color: var(--omg-so-vivid);
+    border-width: 2px;
+    transition-duration: 0.2s;
+}
+
+.dark .form-control:hover {
+    background-color: #ffffff11;
+}
+
+.dark .credits {
+    color: var(--dull-dark);
+}
