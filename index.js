@@ -8,7 +8,6 @@ document.querySelector('#r-form').addEventListener('submit', function(e){
     // Hide the results
     document.querySelector('#results').style.display = 'none';
     document.querySelector('#cope').style.display = 'none';
-    setTimeout(endResult, 1000);
     endResult()
     e.preventDefault();
 });
