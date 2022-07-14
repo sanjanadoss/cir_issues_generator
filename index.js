@@ -1,12 +1,12 @@
 // Submit event listener
-document.querySelector('#loan-form').addEventListener('submit', function(e){
+document.querySelector('#r-form').addEventListener('submit', function(e){
     // Hide the results
     document.querySelector('#results').style.display = 'none';
     // Show the loading animation
     document.querySelector('#loading').style.display = 'block';
     document.querySelector('#cope').style.display = 'none';
 
-    setTimeout(endResult, 2000);
+    setTimeout(endResult, 1000);
 
     e.preventDefault();
 });
