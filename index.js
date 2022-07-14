@@ -24,13 +24,9 @@ function endResult(){
     var copyPaste = document.getElementById('copyPaste');
 
     if(name.value && rollNo.value && emailId.value && mobNo.value && issue.value){
-        if(mobNo.value.length==10){
             copyPaste.value = "Name: "+ name.value+ '\r\n' + "Roll No.: "+ rollNo.value+ '\r\n' +"Email Id: "+ emailId.value+'\r\n' + "Mobile No: "+ mobNo.value+ '\r\n' +"Issue: "+ issue.value;
             document.querySelector('#results').style.display = 'block';
             document.querySelector('#cope').style.display = 'block';
-        } else {
-        showError('Check mobile number');
-     }
     } else {
         showError('Some values are left blank');
     }
