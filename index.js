@@ -25,7 +25,6 @@ function endResult(){
     var copyPaste = document.getElementById('copyPaste');
 
     if(name && rollNo && emailId && mobNo && issue){
-        let emp = "";
         copyPaste.value = "Name: "+ name.value+ '\r\n' + "Roll No.: "+ rollNo.value+ '\r\n' +"Email Id: "+ emailId.value+'\r\n' + "Mobile No: "+ mobNo.value+ '\r\n' +"Issue: "+ issue.value;
         document.querySelector('#results').style.display = 'block';
         document.querySelector('#loading').style.display = 'none';
